@@ -4,28 +4,135 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F5F5F5">
+    android:background="@drawable/futuristic_bg">
 
     <TextView
         android:id="@+id/tvMainTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Elérhető masszázsok"
-        android:textSize="24sp"
+        android:text="Masszázsok"
+        android:textColor="@color/white"
+        android:textSize="28sp"
         android:textStyle="bold"
+        android:letterSpacing="0.1"
         android:layout_marginTop="24dp"
         android:layout_marginStart="16dp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"/>
+
+    <ImageButton
+        android:id="@+id/btnProfile"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/rounded_button"
+        android:src="@drawable/ic_profile_custom"
+        app:tint="@color/btn_text_color"
+        android:scaleType="centerInside"
+        android:padding="12dp"
+        android:contentDescription="Profil"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewMassages"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="16dp"
+        android:paddingHorizontal="8dp"
+        android:clipToPadding="false"
         app:layout_constraintTop_toBottomOf="@id/tvMainTitle"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- Profile Dropdown Overlay -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvProfileDropdown"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:visibility="gone"
+        app:cardCornerRadius="24dp"
+        app:cardElevation="16dp"
+        app:cardBackgroundColor="@color/white"
+        app:layout_constraintTop_toBottomOf="@id/btnProfile"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="24dp">
+
+            <TextView
+                android:id="@+id/tvUserEmail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="felhasznalo@email.com"
+                android:textColor="@color/btn_text_color"
+                android:textStyle="bold"
+                android:textSize="16sp"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#EEEEEE"
+                android:layout_marginVertical="16dp"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnMyData"
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                android:text="Adataim"
+                android:textColor="@color/white"
+                android:backgroundTint="@color/green_grad_start"
+                android:background="@drawable/rounded_button"
+                android:layout_marginBottom="12dp"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:textAllCaps="false"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnMyBookings"
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                android:text="Foglalásaim"
+                android:textColor="@color/white"
+                android:backgroundTint="@color/green_grad_start"
+                android:background="@drawable/rounded_button"
+                android:layout_marginBottom="12dp"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:textAllCaps="false"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnCoupons"
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                android:text="Kuponok"
+                android:textColor="@color/white"
+                android:backgroundTint="@color/green_grad_start"
+                android:background="@drawable/rounded_button"
+                android:layout_marginBottom="24dp"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:textAllCaps="false"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnLogoutOverlay"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:text="Kijelentkezés"
+                android:textColor="@color/white"
+                android:backgroundTint="@android:color/holo_red_dark"
+                android:background="@drawable/rounded_button"
+                android:textStyle="bold"
+                android:textAllCaps="false"/>
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

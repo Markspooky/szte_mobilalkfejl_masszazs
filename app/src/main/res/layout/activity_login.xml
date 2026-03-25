@@ -4,60 +4,78 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/futuristic_bg"
     android:padding="24dp">
 
     <TextView
         android:id="@+id/tvTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Masszázs Foglalás"
-        android:textSize="28sp"
+        android:text="MASSZÁZS APP"
+        android:textColor="@color/white"
+        android:textSize="36sp"
         android:textStyle="bold"
+        android:letterSpacing="0.1"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="50dp"/>
+        android:layout_marginTop="80dp"/>
 
-    <EditText
-        android:id="@+id/etEmail"
-        android:layout_width="0dp"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="E-mail cím"
-        android:inputType="textEmailAddress"
+        android:orientation="vertical"
+        android:background="@drawable/glass_card"
+        android:padding="24dp"
         app:layout_constraintTop_toBottomOf="@id/tvTitle"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="40dp"/>
+        app:layout_constraintBottom_toTopOf="@id/tvRegisterLink"
+        android:layout_marginTop="40dp">
 
-    <EditText
-        android:id="@+id/etPassword"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:hint="Jelszó"
-        android:inputType="textPassword"
-        app:layout_constraintTop_toBottomOf="@id/etEmail"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="16dp"/>
+        <EditText
+            android:id="@+id/etEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="E-mail cím"
+            android:textColorHint="#CCFFFFFF"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/white"
+            android:inputType="textEmailAddress"
+            android:padding="12dp"/>
 
-    <Button
-        android:id="@+id/btnLogin"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="Bejelentkezés"
-        app:layout_constraintTop_toBottomOf="@id/etPassword"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="32dp"/>
+        <EditText
+            android:id="@+id/etPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Jelszó"
+            android:textColorHint="#CCFFFFFF"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/white"
+            android:inputType="textPassword"
+            android:layout_marginTop="16dp"
+            android:padding="12dp"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnLogin"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="BELÉPÉS"
+            android:textColor="@color/btn_text_color"
+            android:background="@drawable/rounded_button"
+            android:textStyle="bold"
+            android:layout_marginTop="32dp"/>
+    </LinearLayout>
 
     <TextView
         android:id="@+id/tvRegisterLink"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Még nincs fiókod? Regisztrálj!"
-        app:layout_constraintTop_toBottomOf="@id/btnLogin"
+        android:text="MÉG NINCS FIÓKOD? REGISZTRÁLJ!"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="16dp"/>
+        android:layout_marginBottom="32dp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

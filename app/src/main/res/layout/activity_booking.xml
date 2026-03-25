@@ -4,58 +4,93 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="20dp"
-    android:background="#FAFAFA">
+    android:background="@drawable/futuristic_bg"
+    android:padding="20dp">
 
     <TextView
         android:id="@+id/tvBookingTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Időpontfoglalás"
-        android:textSize="26sp"
+        android:textColor="@color/white"
+        android:textSize="28sp"
         android:textStyle="bold"
+        android:letterSpacing="0.1"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="20dp"/>
 
-    <TextView
-        android:id="@+id/tvSelectedMassage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Kiválasztott masszázs: -"
-        android:textSize="18sp"
-        android:textColor="#555555"
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
         app:layout_constraintTop_toBottomOf="@id/tvBookingTitle"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="16dp"/>
+        app:layout_constraintBottom_toTopOf="@id/btnConfirmBooking">
 
-    <CalendarView
-        android:id="@+id/calendarView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/tvSelectedMassage"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="20dp"/>
+        <LinearLayout
+            android:id="@+id/containerBooking"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/glass_card"
+            android:padding="16dp">
 
-    <EditText
-        android:id="@+id/etTime"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Hány órára jönnél? (pl. 14:00)"
-        android:inputType="time"
-        app:layout_constraintTop_toBottomOf="@id/calendarView"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="20dp"/>
+            <TextView
+                android:id="@+id/tvSelectedMassage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Kiválasztott: -"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold"/>
 
-    <Button
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Válassz masszőrt:"
+                android:textColor="#B0FFFFFF"
+                android:layout_marginTop="16dp"/>
+
+            <Spinner
+                android:id="@+id/spinnerTherapists"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/white"
+                android:layout_marginTop="8dp"
+                android:padding="8dp"/>
+
+            <CalendarView
+                android:id="@+id/calendarView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:theme="@style/Theme.AppCompat.DayNight"
+                android:layout_marginTop="16dp"/>
+
+            <EditText
+                android:id="@+id/etTime"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Időpont (pl. 14:00)"
+                android:textColorHint="#80FFFFFF"
+                android:textColor="@color/white"
+                android:backgroundTint="@color/white"
+                android:inputType="time"
+                android:layout_marginTop="16dp"
+                android:padding="12dp"/>
+        </LinearLayout>
+    </ScrollView>
+
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnConfirmBooking"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:text="Foglalás megerősítése"
-        android:textSize="18sp"
+        android:textColor="@color/btn_text_color"
+        android:background="@drawable/rounded_button"
+        android:textStyle="bold"
+        android:textAllCaps="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

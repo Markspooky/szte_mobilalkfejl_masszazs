@@ -1,9 +1,17 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Base.Theme.MasszázsApp" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    <style name="Theme.MasszázsApp" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/green_grad_start</item>
+        <item name="colorPrimaryVariant">@color/green_grad_end</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/white</item>
+        <item name="colorSecondaryVariant">@color/white</item>
+        <item name="colorOnSecondary">@color/btn_text_color</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">@color/green_grad_start</item>
+        <!-- Customize your theme here. -->
+        <item name="android:windowBackground">@drawable/futuristic_bg</item>
     </style>
-
-    <style name="Theme.MasszázsApp" parent="Base.Theme.MasszázsApp" />
 </resources>

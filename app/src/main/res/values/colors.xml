@@ -2,4 +2,20 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <!-- Green Gradient Palette -->
+    <color name="green_grad_start">#1B5E20</color>
+    <color name="green_grad_end">#4CAF50</color>
+
+    <!-- Button & Accent (Clean White/Glass) -->
+    <color name="btn_bg_color">#FFFFFF</color>
+    <color name="btn_text_color">#1B5E20</color>
+    <color name="neon_green">#39FF14</color>
+
+    <color name="glass_white">#33FFFFFF</color>
+    <color name="glass_border">#66FFFFFF</color>
+
+    <color name="colorPrimary">#2E7D32</color>
+    <color name="colorPrimaryDark">#1B5E20</color>
+    <color name="colorAccent">#FFFFFF</color>
 </resources>

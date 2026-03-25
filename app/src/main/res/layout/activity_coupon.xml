@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/futuristic_bg"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/tvCouponTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Kuponok"
+        android:textColor="@color/white"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:letterSpacing="0.1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="16dp"/>
+
+    <LinearLayout
+        android:id="@+id/llPointsContainer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:background="@drawable/glass_card"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="8dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp">
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@android:drawable/btn_star_big_on"
+            app:tint="@color/neon_green"
+            android:layout_marginEnd="8dp"
+            android:contentDescription="Points icon"/>
+
+        <TextView
+            android:id="@+id/tvCouponPoints"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"/>
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintTop_toBottomOf="@id/tvCouponTitle"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Template for Coupon Item -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="4dp"
+                android:layout_marginVertical="8dp"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="0dp"
+                app:cardBackgroundColor="@color/glass_white">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="20dp"
+                    android:background="@drawable/glass_card">
+
+                    <TextView
+                        android:id="@+id/tvC1Name"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="5% Kedvezmény"
+                        android:textColor="@color/white"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/btnBuyCoupon5"/>
+
+                    <TextView
+                        android:id="@+id/tvC1Price"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="Ár: 3 pont"
+                        android:textColor="@color/white"
+                        android:alpha="0.8"
+                        android:textSize="16sp"
+                        android:layout_marginTop="8dp"
+                        app:layout_constraintTop_toBottomOf="@id/tvC1Name"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/btnBuyCoupon5"/>
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btnBuyCoupon5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="MEGVESZ"
+                        android:textColor="@color/btn_text_color"
+                        android:background="@drawable/rounded_button"
+                        android:textStyle="bold"
+                        android:paddingHorizontal="16dp"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"/>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Repeat for 10% -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="4dp"
+                android:layout_marginVertical="8dp"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="0dp"
+                app:cardBackgroundColor="@color/glass_white">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="20dp"
+                    android:background="@drawable/glass_card">
+
+                    <TextView
+                        android:id="@+id/tvC2Name"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="10% Kedvezmény"
+                        android:textColor="@color/white"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/btnBuyCoupon10"/>
+
+                    <TextView
+                        android:id="@+id/tvC2Price"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="Ár: 5 pont"
+                        android:textColor="@color/white"
+                        android:alpha="0.8"
+                        android:textSize="16sp"
+                        android:layout_marginTop="8dp"
+                        app:layout_constraintTop_toBottomOf="@id/tvC2Name"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/btnBuyCoupon10"/>
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btnBuyCoupon10"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="MEGVESZ"
+                        android:textColor="@color/btn_text_color"
+                        android:background="@drawable/rounded_button"
+                        android:textStyle="bold"
+                        android:paddingHorizontal="16dp"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"/>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Repeat for Merch -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="4dp"
+                android:layout_marginVertical="8dp"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="0dp"
+                app:cardBackgroundColor="@color/glass_white">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="20dp"
+                    android:background="@drawable/glass_card">
+
+                    <TextView
+                        android:id="@+id/tvC3Name"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="Masszázs póló"
+                        android:textColor="@color/white"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/btnBuyMerch"/>
+
+                    <TextView
+                        android:id="@+id/tvC3Price"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="Ár: 10 pont"
+                        android:textColor="@color/white"
+                        android:alpha="0.8"
+                        android:textSize="16sp"
+                        android:layout_marginTop="8dp"
+                        app:layout_constraintTop_toBottomOf="@id/tvC3Name"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/btnBuyMerch"/>
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btnBuyMerch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="MEGVESZ"
+                        android:textColor="@color/btn_text_color"
+                        android:background="@drawable/rounded_button"
+                        android:textStyle="bold"
+                        android:paddingHorizontal="16dp"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"/>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Repeat for Horse Balm -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="4dp"
+                android:layout_marginVertical="8dp"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="0dp"
+                app:cardBackgroundColor="@color/glass_white">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="20dp"
+                    android:background="@drawable/glass_card">
+
+                    <TextView
+                        android:id="@+id/tvC4Name"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="Lóbalzsam (Extra)"
+                        android:textColor="@color/white"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/btnBuyBalm"/>
+
+                    <TextView
+                        android:id="@+id/tvC4Price"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="Ár: 10 pont"
+                        android:textColor="@color/white"
+                        android:alpha="0.8"
+                        android:textSize="16sp"
+                        android:layout_marginTop="8dp"
+                        app:layout_constraintTop_toBottomOf="@id/tvC4Name"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/btnBuyBalm"/>
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btnBuyBalm"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="MEGVESZ"
+                        android:textColor="@color/btn_text_color"
+                        android:background="@drawable/rounded_button"
+                        android:textStyle="bold"
+                        android:paddingHorizontal="16dp"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"/>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Repeat for Candle -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="4dp"
+                android:layout_marginVertical="8dp"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="0dp"
+                app:cardBackgroundColor="@color/glass_white">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="20dp"
+                    android:background="@drawable/glass_card">
+
+                    <TextView
+                        android:id="@+id/tvC5Name"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="Illatgyertya szett"
+                        android:textColor="@color/white"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/btnBuyCandle"/>
+
+                    <TextView
+                        android:id="@+id/tvC5Price"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="Ár: 8 pont"
+                        android:textColor="@color/white"
+                        android:alpha="0.8"
+                        android:textSize="16sp"
+                        android:layout_marginTop="8dp"
+                        app:layout_constraintTop_toBottomOf="@id/tvC5Name"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/btnBuyCandle"/>
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btnBuyCandle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="MEGVESZ"
+                        android:textColor="@color/btn_text_color"
+                        android:background="@drawable/rounded_button"
+                        android:textStyle="bold"
+                        android:paddingHorizontal="16dp"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"/>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
